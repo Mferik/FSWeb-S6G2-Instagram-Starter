@@ -21,7 +21,16 @@ const App = () => {
 
   const [gonderiler, setGonderiler] = useState(sahteVeri);
 
-  const [aramaKriteri, setAramaKriteri] = useState("");
+  const [arama, setArama] = useState("");
+
+    const aramaFunc = (arama) =>{
+      let filterArray = [];
+      filterArray = sahteVeri.filter((item) =>{
+        return item.username.includes(arama);
+      })
+      setGonderiler(filterArray)
+    }
+
 
 	
   const gonderiyiBegen = gonderiID => {
@@ -52,7 +61,7 @@ const App = () => {
     <div className='App'>
       {/* AramaÇubuğu ve Gönderiler'i render etmesi için buraya ekleyin */}
       {/* Her bileşenin hangi proplara ihtiyaç duyduğunu kontrol edin, eğer ihtiyaç varsa ekleyin! */}
-      <AramaÇubuğu/>
+      <AramaÇubuğu aramaFunc = {aramaFunc}/>
       <Gönderiler gonderiyiBegen = {gonderiyiBegen} gonderiler = {gonderiler} />
     </div>
   );
