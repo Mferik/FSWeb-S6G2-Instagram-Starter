@@ -23,6 +23,7 @@ const sahteVeri = [
                 text: "Can't wait to try it!",
             },
         ],
+        liked: false
     },
     {
         id: 2,
@@ -53,6 +54,7 @@ const sahteVeri = [
                 text: "It that injustice",
             },
         ],
+        liked: false
     },
 ];
 
